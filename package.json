@@ -18,7 +18,12 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "angular2-text-mask": "^9.0.0",
+    "ng-brazil": "^2.4.5",
+    "ngx-custom-validators": "^11.0.1",
+    "ngx-validators": "^5.4.0",
     "rxjs": "~6.6.0",
+    "text-mask-addons": "^3.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
