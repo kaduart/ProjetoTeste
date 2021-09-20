@@ -26,7 +26,7 @@ export class AuthenticationService {
         private router: Router
     ) {
 
-        const token = localStorage.getItem('teste');
+        const token = localStorage.getItem('teste'); 
         this._isLoggedIn$.next(!!token);
 
     }
