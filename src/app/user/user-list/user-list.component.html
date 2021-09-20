@@ -1,0 +1,46 @@
+  
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <div class="col-md-12">
+          <div class="row btn-add mt-4">
+            <h2>Lista de Usuários</h2>
+            <button  class="btn btn-success" (click)="newUser()">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <table class="table table-hover" style="margin: auto;">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>CPF</th>
+              <th>CEP</th>
+              <th>Endereço(Rua)</th>
+              <th>Numero</th>
+              <th>Complemento</th>
+              <th>Bairro</th>
+              <th>Cidade</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <td>{{user.name}}</td>
+              <td>{{user.cpf}}</td>
+              <td>{{user.addressCep}}</td>
+              <td>{{user.addressStreet}}</td>
+              <td>{{user.addressNumber}}</td>
+              <td>{{user.addressComplement}}</td>
+              <td>{{user.addressNeighborhood}}</td>
+              <td>{{user.addressCity}}</td>
+              <td>{{user.addressUf}}</td>
+              <td class="col-md-4">
+                <button (click)="updateUser(user.id)" class="btn btn-outline-primary" style="margin-left: 10px">Atualizar</button>
+                <button (click)="userDetails(user.id)" class="btn btn-outline-info" style="margin-left: 10px">Detalhes</button>
+                <button (click)="deleteUser(user.id)" class="btn btn-outline-danger" style="margin-left: 10px">Deletar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    

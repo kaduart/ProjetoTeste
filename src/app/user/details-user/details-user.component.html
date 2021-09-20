@@ -1,0 +1,67 @@
+<div class="col-md-12">
+  <div class="card border-light mb-3">
+    <div class="card-header">Detalhes </div>
+    <div class="card-body">
+      <h5 class="card-title">Informações básicas do cliente</h5>
+      <hr>
+      <form>
+        <fieldset disabled>
+            <div class="row">
+                <div class="form-group col-md-3">
+                  <label for="disabledTextInput">Nome</label>
+                  <input type="text" id="disabledTextInput" class="form-control" placeholder="{{user.name}}">
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="disabledTextInput">CPF</label>
+                  <input type="text" id="disabledTextInput" class="form-control" placeholder="{{user.cpf | cpf}}">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="disabledTextInput">Email</label>
+                    <input type="text" id="disabledTextInput" class="form-control" placeholder="{{user.email}}">
+                </div>
+            </div>
+            <hr>
+            <h5 class="card-title">Endereço</h5>
+            <div class="row">
+                <div class="form-group col-md-3">
+                  <label for="disabledTextInput">CEP</label>
+                  <input type="text" id="disabledTextInput" class="form-control" placeholder="{{user.addressCep}}">
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="disabledTextInput">Rua</label>
+                  <input type="text" id="disabledTextInput" class="form-control" placeholder="{{user.addressStreet}}">
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="disabledTextInput">Número</label>
+                  <input type="text" id="disabledTextInput" class="form-control" placeholder="{{user.addressNumber}}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                  <label for="disabledTextInput">Bairro</label>
+                  <input type="text" id="disabledTextInput" class="form-control" placeholder="{{user.addressNeighborhood}}">
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="disabledTextInput">Cidade</label>
+                  <input type="text" id="disabledTextInput" class="form-control" placeholder="{{user.addressCity}}">
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="disabledTextInput">Estado</label>
+                  <input type="text" id="disabledTextInput" class="form-control" placeholder="{{user.addressUf}}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="disabledTextInput">Complemento</label>
+                  <input type="text" id="disabledTextInput" class="form-control" placeholder="{{user.addressComplement}}">
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+    <hr>
+    <button type="button" (click)="voltar();" class="btn btn-outline-primary">Voltar</button>
+    </div>
+  </div>
+</div>
+

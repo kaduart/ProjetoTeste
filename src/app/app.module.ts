@@ -16,8 +16,6 @@ import { CommonModule } from '@angular/common';
 
 import { NgBrazil } from 'ng-brazil';
 import { ValidatorsModule } from 'ngx-validators';
-import { HomeComponent } from './home/home.component';
-import { AdminComponent } from './admin/admin.component';
 import { ErrorInterceptorService } from './_helpers/error-interceptor.service';
 import { LoginComponent } from './login/login.component';
 
@@ -28,8 +26,6 @@ import { LoginComponent } from './login/login.component';
     CreateUserComponent,
     UpdateUserComponent,
     DetailsUserComponent,
-    HomeComponent,
-    AdminComponent,
     LoginComponent, 
   ],
   imports: [
