@@ -1,9 +1,9 @@
 import { Router } from '@angular/router';
-import { map, shareReplay, tap } from 'rxjs/operators';
+import {  tap } from 'rxjs/operators';
 import { User } from '../_models/user';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 
 const AUTH_DATA = "auth_data";
@@ -26,7 +26,7 @@ export class AuthenticationService {
         private router: Router
     ) {
 
-        const token = localStorage.getItem('teste'); 
+        const token = localStorage.getItem(AUTH_DATA);
         this._isLoggedIn$.next(!!token);
 
     }
@@ -35,7 +35,7 @@ export class AuthenticationService {
         return this.http.post<User>(`${this.baseUrl}/login`, request, { responseType: 'text' as 'json' })
             .pipe(
                 tap(response => {
-                    localStorage.setItem('teste', JSON.stringify(response));
+                    localStorage.setItem(AUTH_DATA, JSON.stringify(response));
                     this._isLoggedIn$.next(true);
                 })
             );
@@ -43,7 +43,7 @@ export class AuthenticationService {
 
 
     logout() {
-        localStorage.removeItem('teste');
+        localStorage.removeItem(AUTH_DATA);
         this.router.navigate(['/login']);
 
     }
