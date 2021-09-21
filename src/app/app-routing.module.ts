@@ -16,20 +16,25 @@ const routes: Routes = [
   },
   {
     path:'add',
-    component: CreateUserComponent
+    component: CreateUserComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path:'list',
     component: UserListComponent,
-    canActivate: [AuthGuardService],
   },
   {
     path:'update/:id',
-    component: UpdateUserComponent
+    component: UpdateUserComponent,
+    canActivate: [AuthGuardService],
+    data: {
+      role: 'Admin'
+    }
   },
   {
     path:'details/:id',
-    component: DetailsUserComponent
+    component: DetailsUserComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path:'login',

@@ -1,3 +1,4 @@
+import { User } from './../_models/user';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { AuthenticationService } from '../_services/authentication.service';
@@ -21,7 +22,8 @@ export class AuthGuardService implements CanActivate {
 
     return this.authenticationService.isLoggedIn$
       .pipe(
-        map(loggedIn => loggedIn ? true : this.router.parseUrl('login'))
+        map(loggedIn => loggedIn ? true : this.router.parseUrl('/list'))
       )
   }
+
 }

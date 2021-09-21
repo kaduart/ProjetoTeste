@@ -6,7 +6,7 @@
       <hr>
       <form>
         <fieldset disabled>
-            <div class="row">
+            <div class="row" *ngIf="user">
                 <div class="form-group col-md-3">
                   <label for="disabledTextInput">Nome</label>
                   <input type="text" id="disabledTextInput" class="form-control" placeholder="{{user.name}}">

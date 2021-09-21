@@ -4,10 +4,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
 
 <!-- nav -->
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+<nav class="navbar navbar-expand navbar-dark bg-dark" >
     <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/list">List</a>
-       <!--  <a class="nav-item nav-link" routerLink="/admin" *ngIf="isAdmin">Admin</a> -->
         <a class="nav-item nav-link" (click)="logout()">Logout</a>
     </div>
 </nav>

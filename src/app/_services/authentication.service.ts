@@ -1,6 +1,6 @@
+import { UserModel } from './../_models/userRole.model';
 import { Router } from '@angular/router';
-import {  tap } from 'rxjs/operators';
-import { User } from '../_models/user';
+import { tap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -20,19 +20,23 @@ export class AuthenticationService {
 
     private _isLoggedIn$ = new BehaviorSubject<boolean>(false);
     isLoggedIn$ = this._isLoggedIn$.asObservable();
+    user!: UserModel;
+
+    get token(): any {
+        return localStorage.getItem(AUTH_DATA);
+    }
 
     constructor(
         private http: HttpClient,
         private router: Router
     ) {
 
-        const token = localStorage.getItem(AUTH_DATA);
-        this._isLoggedIn$.next(!!token);
+        this._isLoggedIn$.next(!!this.token);
 
     }
 
-    login(request: any): Observable<User> {
-        return this.http.post<User>(`${this.baseUrl}/login`, request, { responseType: 'text' as 'json' })
+    login(request: any): Observable<any> {
+        return this.http.post<any>(`${this.baseUrl}/login`, request, { responseType: 'text' as 'json' })
             .pipe(
                 tap(response => {
                     localStorage.setItem(AUTH_DATA, JSON.stringify(response));
